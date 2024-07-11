@@ -1,28 +1,26 @@
 document.getElementById("buttonDescrição").onclick = function () {
   let descrição = document.getElementById("descriçãoFixa");
-  let labelDescrição = document.getElementsByClassName("descriçãoFixa");
 
-  if (descrição.style.display === "none" || descrição.style.display === "") {
-    descrição.style.display = "block";
-    labelDescrição.style.display = "block";
+  if (descrição.className === "d-none" || descrição.className === "") {
+    descrição.className = "d-block";
   } else {
-    descrição.style.display = "none";
-    labelDescrição.style.display = "none";
+    descrição.className = "d-none";
   }
 };
 
 document.getElementById("concluidoFixa").onclick = function () {
   let tarefaFixa = document.getElementById("tarefaFixa");
 
-  let currentColor = window.getComputedStyle(tarefaFixa).backgroundColor;
-
   if (
-    currentColor === "rgb(248, 228, 75)" ||
-    currentColor === "rgba(0, 0, 0, 0)"
+    tarefaFixa.className ===
+      "h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded" ||
+    tarefaFixa.className === ""
   ) {
-    tarefaFixa.style.backgroundColor = "#89E186";
+    tarefaFixa.className =
+      "h-25 w-100 d-flex justify-content-around align-items-center bg-success bg-opacity-50 rounded";
   } else {
-    tarefaFixa.style.backgroundColor = "#F8E44B";
+    tarefaFixa.className =
+      "h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded";
   }
 };
 
@@ -34,14 +32,12 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
   let newButtonPendenteFlexivel = document.createElement("button");
   let newDiv = document.createElement("div");
   let newTextareaFlexivel = document.createElement("textarea");
-  let newLabelFlexivel = document.createElement("label");
   let newIFlexivel = document.createElement("i");
   let newIFlexivelConcluido = document.createElement("i");
   let newIFlexivelPendente = document.createElement("i");
 
   newButtonPendenteFlexivel.appendChild(newIFlexivelPendente);
   newButtonConcluidoFlexivel.appendChild(newIFlexivelConcluido);
-  newDiv.appendChild(newLabelFlexivel);
   newDiv.appendChild(newTextareaFlexivel);
   newSection.appendChild(newP);
   newSection.appendChild(newDiv);
@@ -50,13 +46,12 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
   newSection.appendChild(newIFlexivel);
   tarefa.appendChild(newSection);
 
-  newSection.id = "tarefaFlexivel";
+  newSection.className = "h-25 w-100 d-flex justify-content-around align-items-center bg-body-secondary rounded";
   newP.textContent = "Nome da tarefa";
   newP.style.width = "100px";
-  newButtonConcluidoFlexivel.id = "concluidoFlexivel";
-  newButtonPendenteFlexivel.id = "pendenteFlexivel";
-  newTextareaFlexivel.id = "descriçãoFlexivel";
-  newLabelFlexivel.className = "descriçãoFlexivel";
+  newButtonConcluidoFlexivel.className = "btn btn-success rounded-circle";
+  newButtonPendenteFlexivel.className = "btn btn-secondary rounded-circle";
+  newTextareaFlexivel.className = "d-none";
   newIFlexivel.className = "fa-solid fa-arrow-down-wide-short";
   newIFlexivelConcluido.className = "fa-solid fa-check";
   newButtonPendenteFlexivel.className = "fa-solid fa-triangle-exclamation";
@@ -108,11 +103,13 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
 function articleData() {
   let data = new Date();
   let articleHora = document.getElementById("hora");
-  
+
   let hora = data.getHours();
   let minutos = data.getMinutes();
 
-  articleHora.innerText = `${hora < 10 ? '0' + hora : hora}:${minutos < 10 ? '0' + minutos : minutos}`;
+  articleHora.innerText = `${hora < 10 ? "0" + hora : hora}:${
+    minutos < 10 ? "0" + minutos : minutos
+  }`;
 }
 
 window.onload = articleData;

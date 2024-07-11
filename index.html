@@ -10,25 +10,24 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
 </head>
 
-<body class="d-flex-column w-100 h-100">
+<body class="vw-100 vh-100 d-flex-column">
 
     <header>
-        <nav class="navbar">
+        <nav class="navbar justify-content-around border-2 border-bottom">
             <article id="hora"></article>
             <article id="titulo">Lista de Tarefas</article>
-            <button id="adicionarTarefaFixa">Adicionar Fixa</button>
+            <button class="btn btn-primary" id="adicionarTarefaFixa">Adicionar Fixa</button>
         </nav>
     </header>
 
-    <main>
-        <article id="tarefa">
-            <section id="tarefaFixa">
+    <main class="w-100 h-75 d-inline-flex bg-body-secondary">
+        <article id="tarefa" class="h-100 w-25 d-flex-column bg-body-tertiary rounded">
+            <section id="tarefaFixa" class="h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded">
                 <p>Nome da tarefa</p>
-                <button id="concluidoFixa"><i class="fa-solid fa-check"></i></button>
-                <button id="adicionarTarefaFlexivel"><i class="fa-solid fa-plus"></i></button>
+                <button id="concluidoFixa" class="btn btn-success rounded-circle"><i class="fa-solid fa-check"></i></button>
+                <button id="adicionarTarefaFlexivel" class="btn btn-secondary rounded-circle"><i class="fa-solid fa-plus"></i></button>
                 <div>
-                    <textarea name="descriçãoFixa" id="descriçãoFixa"></textarea>
-                    <label for="descriçãoFixa">Descrição</label>
+                    <textarea name="descriçãoFixa" id="descriçãoFixa" class="d-none"></textarea>
                 </div>
                 <i class="fa-solid fa-arrow-down-wide-short" id="buttonDescrição"></i>
             </section>
