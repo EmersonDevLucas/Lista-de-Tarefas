@@ -1,10 +1,11 @@
 document.getElementById("buttonDescrição").onclick = function () {
   let descrição = document.getElementById("descriçãoFixa");
 
-  if (descrição.className === "d-none" || descrição.className === "") {
-    descrição.className = "d-block";
-  } else {
-    descrição.className = "d-none";
+  if (
+    descrição.className === "modal fade d-none" ||
+    descrição.className === ""
+  ) {
+    descrição.className = "modal fade d-block";
   }
 };
 
@@ -13,14 +14,14 @@ document.getElementById("concluidoFixa").onclick = function () {
 
   if (
     tarefaFixa.className ===
-      "h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded" ||
+    "card-header h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded" ||
     tarefaFixa.className === ""
   ) {
     tarefaFixa.className =
-      "h-25 w-100 d-flex justify-content-around align-items-center bg-success bg-opacity-50 rounded";
+      "card-header h-25 w-100 d-flex justify-content-around align-items-center bg-success bg-opacity-50 rounded";
   } else {
     tarefaFixa.className =
-      "h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded";
+      "card-header h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded";
   }
 };
 
@@ -46,7 +47,8 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
   newSection.appendChild(newIFlexivel);
   tarefa.appendChild(newSection);
 
-  newSection.className = "h-25 w-100 d-flex justify-content-around align-items-center bg-body-secondary rounded";
+  newSection.className =
+    "card-header h-25 w-100 d-flex justify-content-around align-items-center bg-body-secondary rounded";
   newP.textContent = "Nome da tarefa";
   newP.style.width = "100px";
   newButtonConcluidoFlexivel.className = "btn btn-success rounded-circle";
@@ -107,9 +109,8 @@ function articleData() {
   let hora = data.getHours();
   let minutos = data.getMinutes();
 
-  articleHora.innerText = `${hora < 10 ? "0" + hora : hora}:${
-    minutos < 10 ? "0" + minutos : minutos
-  }`;
+  articleHora.innerText = `${hora < 10 ? "0" + hora : hora}:${minutos < 10 ? "0" + minutos : minutos
+    }`;
 }
 
 window.onload = articleData;

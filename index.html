@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css">
 </head>
 
-<body class="vw-100 vh-100 d-flex-column">
+<body class="card vh-100 d-flex-column">
 
-    <header>
+    <header class="card-header">
         <nav class="navbar justify-content-around border-2 border-bottom">
             <article id="hora"></article>
             <article id="titulo">Lista de Tarefas</article>
@@ -20,16 +20,37 @@
         </nav>
     </header>
 
-    <main class="w-100 h-75 d-inline-flex bg-body-secondary">
-        <article id="tarefa" class="h-100 w-25 d-flex-column bg-body-tertiary rounded">
-            <section id="tarefaFixa" class="h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded">
-                <p>Nome da tarefa</p>
-                <button id="concluidoFixa" class="btn btn-success rounded-circle"><i class="fa-solid fa-check"></i></button>
-                <button id="adicionarTarefaFlexivel" class="btn btn-secondary rounded-circle"><i class="fa-solid fa-plus"></i></button>
-                <div>
-                    <textarea name="descriçãoFixa" id="descriçãoFixa" class="d-none"></textarea>
+    <main class="card-body h-50 d-inline-flex">
+        <article id="tarefa" class="card h-100 w-25 d-flex-column bg-body-tertiary rounded">
+            <section id="tarefaFixa"
+                class="card-header h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded">
+                <p class="card-title">Nome da tarefa</p>
+                <button id="concluidoFixa" class="btn btn-success rounded-circle"><i
+                        class="fa-solid fa-check"></i></button>
+                <button id="adicionarTarefaFlexivel" class="btn btn-secondary rounded-circle"><i
+                        class="fa-solid fa-plus"></i></button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    
+                </button>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <i class="fa-solid fa-arrow-down-wide-short" id="buttonDescrição"></i>
             </section>
     </main>
 
