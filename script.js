@@ -52,7 +52,7 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
 
   newSection.id = "tarefaFlexivel";
   newP.textContent = "Nome da tarefa";
-  newP.style.width = '100px'
+  newP.style.width = "100px";
   newButtonConcluidoFlexivel.id = "concluidoFlexivel";
   newButtonPendenteFlexivel.id = "pendenteFlexivel";
   newTextareaFlexivel.id = "descriçãoFlexivel";
@@ -104,3 +104,15 @@ document.getElementById("adicionarTarefaFlexivel").onclick = function () {
     }
   };
 };
+
+function articleData() {
+  let data = new Date();
+  let articleHora = document.getElementById("hora");
+  
+  let hora = data.getHours();
+  let minutos = data.getMinutes();
+
+  articleHora.innerText = `${hora < 10 ? '0' + hora : hora}:${minutos < 10 ? '0' + minutos : minutos}`;
+}
+
+window.onload = articleData;
