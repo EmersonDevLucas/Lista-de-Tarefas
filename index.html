@@ -21,7 +21,7 @@
     </header>
 
     <main class="card-body h-50 d-inline-flex">
-        <article id="tarefa" class="card h-100 w-25 d-flex-column bg-body-tertiary rounded">
+        <article id="tarefa" class="card h-100 w-25 d-flex-column bg-body-tertiary rounded overflow-auto">
             <section id="tarefaFixa"
                 class="card-header h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded">
                 <p class="card-title">Nome da tarefa</p>
@@ -29,24 +29,16 @@
                         class="fa-solid fa-check"></i></button>
                 <button id="adicionarTarefaFlexivel" class="btn btn-secondary rounded-circle"><i
                         class="fa-solid fa-plus"></i></button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    
-                </button>
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                <button type="button" class="btn btn-primary" id="buttonDescrição"></button>
+                <div class="modal d-none" tabindex="-1" id="descriçãoFixa">
+                    <div class="modal-dialog modal-sm">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                            <div class="modal-header justify-content-around">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Descrição</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="fechar"></button>
                             </div>
                             <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Understood</button>
+                                <textarea class="w-100 card bg-body-tertiary" name="descrição" id="descriçãoFixa"></textarea>
                             </div>
                         </div>
                     </div>
