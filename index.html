@@ -15,36 +15,17 @@
     <header class="card-header">
         <nav class="navbar justify-content-around border-2 border-bottom">
             <article id="hora"></article>
-            <article id="titulo">Lista de Tarefas</article>
-            <button class="btn btn-primary" id="adicionarTarefaFixa">Adicionar Fixa</button>
+            <article id="titulo">Lista de Tarefas | Gold Abm</article>
+            <article>Olá, Emerson!</article>
+            <button class="btn btn-primary" id="adicionarTarefaFixa">Adicionar</button>
         </nav>
     </header>
 
-    <main class="card-body h-50 d-inline-flex">
-        <article id="tarefa" class="card h-100 w-25 d-flex-column bg-body-tertiary rounded overflow-auto">
-            <section id="tarefaFixa"
-                class="card-header h-25 w-100 d-flex justify-content-around align-items-center bg-primary bg-opacity-50 rounded">
-                <p class="card-title">Nome da tarefa</p>
-                <button id="concluidoFixa" class="btn btn-success rounded-circle"><i
-                        class="fa-solid fa-check"></i></button>
-                <button id="adicionarTarefaFlexivel" class="btn btn-secondary rounded-circle"><i
-                        class="fa-solid fa-plus"></i></button>
-                <button type="button" class="btn btn-primary" id="buttonDescrição"></button>
-                <div class="modal d-none" tabindex="-1" id="descriçãoFixa">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header justify-content-around">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Descrição</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="fechar"></button>
-                            </div>
-                            <div class="modal-body">
-                                <textarea class="w-100 card bg-body-tertiary" name="descrição" id="descriçãoFixa"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-    </main>
+    <main class="card-body h-50 d-flex gap-2 overflow-auto" id="main"></main>
+
+    <footer class="card-footer d-flex align-items-center justify-content-center">
+        "É capaz quem pensa que é capaz." - Buda
+    </footer>
 
     <script src="script.js"></script>
 </body>
